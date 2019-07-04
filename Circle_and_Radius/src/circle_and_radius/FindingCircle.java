@@ -21,9 +21,7 @@ public class FindingCircle {
 		System.out.println("Input the area of the circle you want to find: ");
 		int area_choice = keyboard.nextInt();
 		keyboard.close();
-		
-		
-		
+				
 		Collections.sort(list, new Comparator<Circle>(){
 			public int compare(Circle o1, Circle o2) {
 				return (o1.radius-o2.radius);
@@ -36,10 +34,11 @@ public class FindingCircle {
 				min_area = list.get(i).area;
 			}
 		}
+		
 		System.out.println("The circle you need to find has index: "+min_index+" and area is: "+min_area);
-		
+		System.out.println();
+		System.out.println("$$$$$$ CIRCLE LIST SORTED BY RADIUS $$$$$$");
 		for(int i=0; i<list.size(); i++)
-			System.out.println(i+" - "+list.get(i).radius+" - "+list.get(i).area);
-		
+			System.out.println("Id: "+i+" - Radius: "+list.get(i).radius+" - Area: "+list.get(i).area);		
 	}
 }
