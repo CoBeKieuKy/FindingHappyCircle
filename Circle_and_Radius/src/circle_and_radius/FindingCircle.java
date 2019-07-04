@@ -1,6 +1,8 @@
 package circle_and_radius;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,13 +22,24 @@ public class FindingCircle {
 		int area_choice = keyboard.nextInt();
 		keyboard.close();
 		
+		
+		
+		Collections.sort(list, new Comparator<Circle>(){
+			public int compare(Circle o1, Circle o2) {
+				return (o1.radius-o2.radius);
+			}
+		});
+		
 		for(int i=1; i<list.size(); i++) {
 			if(Math.abs(list.get(i).area- area_choice) < Math.abs(min_area - area_choice)) {
 				min_index = i;
 				min_area = list.get(i).area;
 			}
 		}
-		
 		System.out.println("The circle you need to find has index: "+min_index+" and area is: "+min_area);
+		
+		for(int i=0; i<list.size(); i++)
+			System.out.println(i+" - "+list.get(i).radius+" - "+list.get(i).area);
+		
 	}
 }
