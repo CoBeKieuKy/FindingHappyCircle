@@ -43,7 +43,17 @@ public class FindingCircle {
 			}
 		}
 		
-		System.out.println("The circle you need to find has index: "+min_index+" and area is: "+list.get(min_index).getArea());
+//		System.out.println("The circle you need to find has index: "+min_index+" and area is: "+list.get(min_index).getArea());
+		
+		System.out.println("The circle you need to find has index: ");
+		for(int i=0; i<list.size(); i++) {
+			if(list.get(i).getArea()==list.get(min_index).getArea()) {
+				System.out.print(i+", ");
+			}
+		}
+		
+		System.out.println("and the area is: "+list.get(min_index).getArea());
+		
 		System.out.println();
 		System.out.println("$$$$$$ CIRCLE LIST SORTED BY RADIUS $$$$$$");
 		for(int i=0; i<list.size(); i++)
